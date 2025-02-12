@@ -1,3 +1,24 @@
+```
+@startuml
+left to right direction
+actor Cliente as C
+actor "Sistema Bancario" as SB
+
+package "Cajero Automático" {
+    usecase "Validarse en el sistema" as UC1
+    usecase "Sacar dinero" as UC2
+    usecase "Realizar transferencia" as UC3
+    usecase "Realizar ingreso" as UC4
+}
+
+C --> UC1 : "Inicia sesión"
+UC1 --> UC2 : "Tras validarse"
+UC1 --> UC3 : "Tras validarse"
+UC1 --> UC4 : "Tras validarse"
+UC2 .> SB : "Verificar saldo y límite diario"
+@enduml
+```
+
 **Descripción del Caso de Uso: "Sacar dinero"**
 
 **1. Nombre del Caso de Uso:**  
